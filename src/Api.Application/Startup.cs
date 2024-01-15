@@ -31,12 +31,12 @@ namespace application
 
             services.AddControllers();
             // services.AddSwaggerGen(); //Simple
-            services.AddSwaggerGen( c =>  //Complete with info of API
+            services.AddSwaggerGen( c =>  //Complete with info of API - Will be see in the content page.
             {
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "Curso de API com AspNetCore 3.1 - Na Prática",
+                    Title = "Estudos sobre API em NetCore 3.1",
                     Description = "Arquitetura DDD",
                     TermsOfService = new Uri("http://www.chrissoares.com.br"),
                     Contact = new OpenApiContact
@@ -65,7 +65,10 @@ namespace application
             app.UseSwagger();
             app.UseSwaggerUI( c=> 
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Curso de API com AspNetCore 3.1");
+                c.SwaggerEndpoint(
+                    "/swagger/v1/swagger.json", 
+                    "Estudos sobre API NetCore 3.1 "  // It will be see in Upper dropbox.
+                );
                 c.RoutePrefix = string.Empty;
             });
 
